@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+Тестовое задание для компании sibdev
+{% endblock %}
+
+{% block bd %}
+        {% if deal %}
+            {% for el in deal %}
+                <div class="alert alert-warning mt-2" style="size: 10; margin-left: 250px; margin-right: 250px; margin-top: 30px;">
+                    <p>Покупатель - {{ el.customer }}</p>
+                    <p>Товар - {{ el.item }}</p>
+                    <p>Сумма - {{ el.total }}</p>
+                    <p>Количество - {{ el.quantity }}</p>
+                    <p>Дата и время регистрации - {{ el.date }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p> Нет записей </p>
+        {% endif %}
+{% endblock %}

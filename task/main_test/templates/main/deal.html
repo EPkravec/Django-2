@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% block title %}
+Добавить сделку
+{% endblock %}
+
+{% block content %}
+Введите данные о сделке
+<form enctype="multipart/form-data" style="margin-left: 250px; margin-right: 250px; margin-top: 20px;" method="post">
+    {% csrf_token %}
+    {{ form.customer }}<br>
+    {{ form.item }}<br>
+    {{ form.total }}<br>
+    {{ form.quantity }}<br>
+    {{ form.date }}<br>
+    <button type="submit" class="btn btn-success" style="margin-bottom: 30px">Добавить</button>
+</form>
+<div><span>{{ error }}</span></div>
+{% endblock %}

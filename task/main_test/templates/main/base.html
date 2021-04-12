@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: RGB(222, 184, 135)">
+    <div>
+        <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+            <p class="h5 my-0 me-md-auto fw-normal" style="margin-right: auto!important;">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Кравец Егор Павлович</font>
+                </font>
+            </p>
+            <nav class="my-2 my-md-0 me-md-3">
+                <a class="p-2 text-dark" href="{% url 'general' %}">
+                    <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Главная</font>
+                    </font>
+                 </a>
+                <a class="p-2 text-dark" target='_blank' href="https://izhevsk.hh.ru/resume/1dc9574fff0870c5a10039ed1f644d4c396a30">
+                    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Резюме</font>
+                    </font>
+                </a>
+                <a class="p-2 text-dark" target='_blank' href="https://github.com/EPkravec">
+                    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Мой GitHab </font>
+                    </font>
+                </a>
+                <a class="p-2 text-dark" href="{% url 'deal' %}">
+                    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Добавить сделку</font>
+                    </font>
+                </a>
+                <a class="p-2 text-dark" href="{% url 'deal_load_csv' %}">
+                    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Загрузить файл</font>
+                    </font>
+                </a>
+            </nav>
+        </header>
+        <div  align="center">
+            <h3 style="margin-top: 20px">{% block content %}{% endblock %}</h3>
+        </div>
+        <div  align="center">
+            <h4 style="margin-top: 20px">{% block bd %}{% endblock %}</h4>
+        </div>
+
+    </div>
+</body>
+</html>
